@@ -74,7 +74,7 @@
 				</div>
 			<div class="banner-info">
 				<div class="col-md-7 header-right">
-					<h1>Hi !</h1>
+					<h1>你好</h1>
 					<h6>UX & UI DESIGNER</h6>
 					<ul class="address">
 					
@@ -525,69 +525,26 @@
 					<div class="container">
 						<div class="service-head text-center">
 						<h4>BLOGS</h4>
-						<h3>我的 <span>博客</span></h3>
+						<h3><a href="https://www.cnblogs.com/maosonglin/">我的 <span>博客</span></a></h3>
 						<span class="border one"></span>
 					</div>
-					   <div class="news-grid w3l-agile">
-					    <div class="col-md-6 news-img">
-						  <a href="#" data-toggle="modal" data-target="#myModal1"> <img src="images/b1.jpg" alt=" " class="img-responsive"></a>
-						 
+				   	<div v-for="(article,index) in articles" class="news-grid">
+					    <div v-bind:class="index % 2 === 0 ? 'col-md-6 news-img':'col-md-6 news-img two'" >
+						  <a v-bind:href="article.link" target="_blank"> <img v-bind:src="article.imgsrc" alt=" " class="img-responsive"></a>
 						</div>
-					    <div class="col-md-6 news-text">
-						   <h3> <a href="#" data-toggle="modal" data-target="#myModal1">HERE GOES AN AWESOME BLOG TITLE</a></h3>
+					    <div v-bind:class="index % 2 === 0 ? 'col-md-6 news-text':'col-md-6 news-text two'">
+						   <h3> <a v-bind:href="article.link" target="_blank" v-html="article.title">springboot 前后端分离开发解决跨域访问</a></h3>
 							<ul class="news">
-								<li><i class="glyphicon glyphicon-user"></i> <a href="#">Admin</a></li>
-								<li><i class="glyphicon glyphicon-comment"></i> <a href="#">2 Comments</a></li>
-								<li><i class="glyphicon glyphicon-heart"></i> <a href="#">50 Likes</a></li>
-								<li><i class="glyphicon glyphicon-tags"></i> <a href="#">3 Tags</a></li>
+								<li><i class="glyphicon glyphicon-user"></i> <a href="#" v-html="article.author">悦尔</a></li>
+								<li><i class="glyphicon glyphicon-comment"></i> <a href="#">{{article.comment}} 评论</a></li>
+								<li><i class="glyphicon glyphicon-heart"></i> <a href="#">{{article.reading}} 阅读</a></li>
+								<li><i class="glyphicon glyphicon-tags"></i> <a href="#">{{article.tag}} 标记</a></li>
 							</ul>
-							<p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-							<a href="#" data-toggle="modal" data-target="#myModal1" class="read hvr-shutter-in-horizontal">Read More</a>
-					
-						</div>
-		
-						<div class="clearfix"></div>
-					 </div>
-					  <div class="news-grid">
-
-					    <div class="col-md-6 news-text two">
-						   <h3> <a href="#" data-toggle="modal" data-target="#myModal1">HERE GOES AN AWESOME BLOG TITLE</a></h3>
-							<ul class="news">
-								<li><i class="glyphicon glyphicon-user"></i> <a href="#">Admin</a></li>
-								<li><i class="glyphicon glyphicon-comment"></i> <a href="#">2 Comments</a></li>
-								<li><i class="glyphicon glyphicon-heart"></i> <a href="#">50 Likes</a></li>
-								<li><i class="glyphicon glyphicon-tags"></i> <a href="#">3 Tags</a></li>
-							</ul>
-							<p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-								<a href="#" data-toggle="modal" data-target="#myModal1" class="read hvr-shutter-in-horizontal">Read More</a>
-					
-						</div>
-						<div class="col-md-6 news-img two">
-						   <a href="#" data-toggle="modal" data-target="#myModal1"> <img src="images/b2.jpg" alt=" " class="img-responsive"></a>
-						 
+							<p>{{index % 2 === 0}}{{article.content}}</p>
+							<a v-bind:href="article.link" target="_blank" class="read hvr-shutter-in-horizontal">更多</a>
 						</div>
 						<div class="clearfix"></div>
-					 </div>
-					  <div class="news-grid">
-					    <div class="col-md-6 news-img">
-						  <a href="#" data-toggle="modal" data-target="#myModal1"> <img src="images/b3.jpg" alt=" " class="img-responsive"></a>
-						 
-						</div>
-					    <div class="col-md-6 news-text">
-						   <h3> <a href="#" data-toggle="modal" data-target="#myModal1">HERE GOES AN AWESOME BLOG TITLE</a></h3>
-							<ul class="news">
-								<li><i class="glyphicon glyphicon-user"></i> <a href="#">Admin</a></li>
-								<li><i class="glyphicon glyphicon-comment"></i> <a href="#">2 Comments</a></li>
-								<li><i class="glyphicon glyphicon-heart"></i> <a href="#">50 Likes</a></li>
-								<li><i class="glyphicon glyphicon-tags"></i> <a href="#">3 Tags</a></li>
-							</ul>
-							<p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-							<a href="#" data-toggle="modal" data-target="#myModal1" class="read hvr-shutter-in-horizontal">Read More</a>
-					
-						</div>
-		
-						<div class="clearfix"></div>
-					 </div>
+				 	</div>
 					</div>
 				</div>
 				<!-- top-grids -->
